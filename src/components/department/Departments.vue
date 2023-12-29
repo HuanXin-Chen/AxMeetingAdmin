@@ -25,7 +25,7 @@
                 <el-table-column type="index"></el-table-column>
                 <el-table-column label="部门号" prop="deptNo"></el-table-column>
                 <el-table-column label="部门名" prop="deptName"></el-table-column>
-                <el-table-column label="部门手机" prop="deptPhone"></el-table-column>
+                <el-table-column label="部门邮箱" prop="deptPhone"></el-table-column>
                 <el-table-column label="部门密码" prop="deptPassword"></el-table-column>
                 <el-table-column label="操作" width="180px">
                     <template slot-scope="scope">
@@ -66,7 +66,7 @@
             <el-form-item label="部门名" prop="deptName">
                 <el-input v-model="addForm.deptName"></el-input>
             </el-form-item>
-            <el-form-item label="部门手机" prop="deptPhone">
+            <el-form-item label="部门邮箱" prop="deptPhone">
                 <el-input v-model="addForm.deptPhone"></el-input>
             </el-form-item>
             <el-form-item label="部门密码" prop="deptPassword">
@@ -112,11 +112,11 @@ export default {
     data () {
         // 验证手机号
         var checkMobile = (rule, value, cb) => {
-            const regMobile = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/
+            const regMobile = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
             if (regMobile.test(value)) {
                 return cb()
             }
-            cb(new Error('请输入格式正确的手机'))
+            cb(new Error('请输入格式正确的邮箱'))
         }
         return {
             queryInfo: {
