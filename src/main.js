@@ -11,7 +11,7 @@ import moment from 'moment'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 // 配置请求的根路径
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = 'http://8.138.84.212:8080'
 
 axios.interceptors.request.use(config => {
   NProgress.start()
